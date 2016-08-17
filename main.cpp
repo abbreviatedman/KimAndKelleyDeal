@@ -13,8 +13,8 @@ using namespace std;
 
 int main()
 {
-	Animal a ("woof", "dog", "Bob", "son", "he", 40, false);
-	Animal b ("woof", "dog", "Marcia", "daughter", "her", 70, true);
+	Animal a ("woof", "dog", "Bob", 40, false);
+	Animal b ("woof", "dog", "Marcia", 70, true);
 	Animal c;
 	c.breedAnimal(a, b);
 	printf("Stopped breeding!\n");

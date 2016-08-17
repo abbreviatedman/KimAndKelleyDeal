@@ -6,12 +6,13 @@
 #include "Animal.h"
 using namespace std;
 
-Animal::Animal(): _sound("unknown"), _species("unknown"), _name("unknown"), _genderbaby("unknown"), _genderpronoun("unknown"), _size(0),  _isFemale(true)
+Animal::Animal(): _sound("unknown"), _species("unknown"), _name("unknown"), _size(0), _isFemale(true)
 {
 	puts ("default constructor");
 }
 
-Animal::Animal(string sound, string species, string name, string genderbaby, string genderpronoun, int size, bool isFemale): _sound(sound), _species(species), _name(name), _genderbaby(genderbaby), _genderpronoun(genderpronoun), _size(size), _isFemale(isFemale)
+Animal::Animal(string sound, string species, string name, int size, bool isFemale): _sound(sound), _species(species),
+		_name(name), _size(size), _isFemale(isFemale)
 {
 	puts ("constructor with arguments");
 }
@@ -23,7 +24,6 @@ Animal::~Animal()
 
 void Animal::breedAnimal(Animal dad, Animal mom)
 {
-	//combine names
 
 	//combine species
 	srand(time(NULL));
@@ -40,8 +40,6 @@ void Animal::breedAnimal(Animal dad, Animal mom)
 	if (rand() % 2)
 	{
 		_isFemale = false;
-		_genderbaby = "son";
-		_genderpronoun = "he";
 		int namerand = rand() % 5;
 		switch (namerand)
 		{
@@ -67,8 +65,6 @@ void Animal::breedAnimal(Animal dad, Animal mom)
 	else
 	{
 		_isFemale = true;
-		_genderbaby = "daughter";
-		_genderpronoun = "she";
 		int namerand = rand() % 5;
 		switch (namerand)
 		{
@@ -104,7 +100,10 @@ void Animal::breedAnimal(Animal dad, Animal mom)
 		{
 			_sound = "glurb";
 		}
-	printf("A baby was born to %s and %s! It's a %s named %s. Now fully grown, this %s weighs %d pounds. %s says %s.\n", mom._name.c_str(), dad._name.c_str(), _genderbaby.c_str(), _name.c_str(), _species.c_str(), _size, _isFemale ? "She" : "He", _sound.c_str());
+	printf("A %s was born to a %s named %s and a %s named %s! %s name is %s. Now fully grown, our new %s weighs %d pounds. %s says %s.\n",
+			_isFemale ? "daughter" : "son", mom._species.c_str(), mom._name.c_str(), dad._species.c_str(), dad._name.c_str(),
+			_isFemale ? "Her" : "His", _name.c_str(),
+			_species.c_str(), _size, _isFemale ? "She" : "He", _sound.c_str());
 }
 
 
