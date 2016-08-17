@@ -21,7 +21,6 @@ public:
 
 	Animal();
 	Animal(string sound, string species, string name, int size, bool isFemale);
-	void breedAnimal(Animal dad, Animal mom);
 	~Animal();
 
 
