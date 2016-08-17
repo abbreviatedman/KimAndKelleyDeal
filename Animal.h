@@ -15,14 +15,12 @@ public:
 	string _sound;
 	string _species;
 	string _name;
-	string _genderbaby;
-	string _genderpronoun;
 	int _size;
 	bool _isFemale;
 
 
 	Animal();
-	Animal(string sound, string species, string name, string genderbaby, string genderpronoun, int size, bool isFemale);
+	Animal(string sound, string species, string name, int size, bool isFemale);
 	void breedAnimal(Animal dad, Animal mom);
 	~Animal();
 
