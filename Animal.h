@@ -4,6 +4,8 @@
 #include <stdio.h>
 #include <string>
 #include <stdlib.h>
+#include <vector>
+#include <iostream>
 using namespace std;
 
 #ifndef ANIMAL_H
@@ -16,13 +18,13 @@ public:
 	string _species;
 	string _name;
 	int _size;
-	bool _isFemale;
+	int _isFemale;
 
 
 	Animal();
-	Animal(string sound, string species, string name, int size, bool isFemale);
+	Animal(string sound, string species, string name, int size, int isFemale);
 	~Animal();
-
+	void randAnimal();
 
 };
 
