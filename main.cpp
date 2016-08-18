@@ -508,7 +508,7 @@ int main()
 	}
 
 	string x;
-	cout<<"\nPress enter to exit!"<<endl;
+	cout<<"\nType a thing and hit an enter key to exit."<<endl;
 	cin>>x;
 
 	return 0;
