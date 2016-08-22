@@ -15,12 +15,6 @@ using namespace std;
 
 
 
-void breedAnimal(Animal & child, Animal dad, Animal mom);
-//void setSpeciesAndSound(Animal & child, Animal dad, Animal mom);
-//void setGenderAndName(Animal & child, Animal dad, Animal mom);
-//void setSize(Animal & child, Animal dad, Animal mom);
-//void printAnimal(Animal child, Animal dad, Animal mom);
-
 
 void breedAnimal(Animal & child, Animal dad, Animal mom)
 {
@@ -30,12 +24,10 @@ void breedAnimal(Animal & child, Animal dad, Animal mom)
 		if (rand() % 2)
 		{
 			child._species = dad._species;
-			child._sound = dad._sound;
 		}
 		else
 		{
 			child._species = mom._species;
-			child._sound = mom._sound;
 		}
 
 		//randomly pick dad or mom, inherit sound.
@@ -57,246 +49,67 @@ void breedAnimal(Animal & child, Animal dad, Animal mom)
 		child._size = (dad._size + mom._size) / 2;
 
 
-		// pick weight and name given species and gender.
+		// randomly pick name given species and gender.
+		int namePicker = rand() % 5;
+
 		if (child._species == "dog")
 		{
 			if (child._isFemale)
 			{
-				switch (rand() % 5)
-				{
-				default:
-				case 0:
-					child._name = "Lassie";
-					break;
-				case 1:
-					child._name = "Maisie";
-					break;
-				case 2:
-					child._name = "Goldberry";
-					break;
-				case 3:
-					child._name = "Lucy";
-					break;
-				case 4:
-					child._name = "Bee";
-					break;
-				}
+				child._name = child.dogFemaleName[namePicker];
 			}
 			else
 			{
-				switch (rand() % 5)
-					{
-					default:
-					case 0:
-						child._name = "Rover";
-						break;
-					case 1:
-						child._name = "Oscar";
-						break;
-					case 2:
-						child._name = "Mellow";
-						break;
-					case 3:
-						child._name = "Maverick";
-						break;
-					case 4:
-						child._name = "Buddy";
-						break;
-					}
+				child._name = child.dogMaleName[namePicker];
 			}
 		}
-
 		else if (child._species == "cat")
 		{
 			if (child._isFemale)
 			{
-				switch (rand() % 5)
-				{
-				default:
-				case 0:
-					child._name = "Tabby";
-					break;
-				case 1:
-					child._name = "Lily";
-					break;
-				case 2:
-					child._name = "Socks";
-					break;
-				case 3:
-					child._name = "Snowball";
-					break;
-				case 4:
-					child._name = "Janice";
-					break;
-				}
+				child._name = child.catFemaleName[namePicker];
 			}
 			else
 			{
-				switch (rand() % 5)
-					{
-					default:
-					case 0:
-						child._name = "Mittens";
-						break;
-					case 1:
-						child._name = "Vladimir";
-						break;
-					case 2:
-						child._name = "Estragon";
-						break;
-					case 3:
-						child._name = "Flash";
-						break;
-					case 4:
-						child._name = "Tango";
-						break;
-					}
+				child._name = child.catMaleName[namePicker];
 			}
 		}
 		else if (child._species == "dinosaur")
 		{
 			if (child._isFemale)
 			{
-					switch (rand() % 5)
-					{
-					default:
-					case 0:
-						child._name = "Cera";
-						break;
-					case 1:
-						child._name = "Chloe";
-						break;
-					case 2:
-						child._name = "Petrova";
-						break;
-					case 3:
-						child._name = "Pauline";
-						break;
-					case 4:
-						child._name = "Posey";
-						break;
-					}
+				child._name = child.dinosaurFemaleName[namePicker];
 			}
 			else
 			{
-				switch (rand() % 5)
-				{
-					default:
-					case 0:
-						child._name = "Littlefoot";
-						break;
-					case 1:
-						child._name = "Ducky";
-						break;
-					case 2:
-						child._name = "Spike";
-						break;
-					case 3:
-						child._name = "Dino";
-						break;
-					case 4:
-						child._name = "Barney";
-						break;
-					}
+				child._name = child.dinosaurMaleName[namePicker];
 			}
 		}
 		else if (child._species == "cow")
 		{
 			if (child._isFemale)
 			{
-				switch (rand() % 5)
-				{
-				default:
-				case 0:
-					child._name = "Bessie";
-					break;
-				case 1:
-					child._name = "Maisie";
-					break;
-				case 2:
-					child._name = "Belle";
-					break;
-				case 3:
-					child._name = "Daisy";
-					break;
-				case 4:
-					child._name = "Isabella";
-					break;
-				}
+				child._name = child.cowFemaleName[namePicker];
 			}
 			else
 			{
-				switch (rand() % 5)
-				{
-					default:
-					case 0:
-						child._name = "Ferdinand";
-						break;
-					case 1:
-						child._name = "Duncan";
-						break;
-					case 2:
-						child._name = "Doug";
-						break;
-					case 3:
-						child._name = "Biff";
-						break;
-					case 4:
-						child._name = "Milky White";
-						break;
-				}
+				child._name = child.cowMaleName[namePicker];
 			}
 		}
 		else if (child._species == "ocelot")
 		{
 			if (child._isFemale)
 			{
-				switch (rand() % 5)
-				{
-				default:
-				case 0:
-					child._name = "Omayra";
-					break;
-				case 1:
-					child._name = "Olive";
-					break;
-				case 2:
-					child._name = "Opal";
-					break;
-				case 3:
-					child._name = "Olga";
-					break;
-				case 4:
-					child._name = "Oneida";
-					break;
-				}
+				child._name = child.ocelotFemaleName[namePicker];
 			}
 			else
 			{
-				switch (rand() % 5)
-				{
-					default:
-					case 0:
-						child._name = "Omar";
-						break;
-					case 1:
-						child._name = "Opie";
-						break;
-					case 2:
-						child._name = "Olaf";
-						break;
-					case 3:
-						child._name = "Orrin";
-						break;
-					case 4:
-						child._name = "Chad";
-						break;
-					}
+				child._name = child.ocelotMaleName[namePicker];
 			}
 		}
 		else
 		{
-			printf("Unknown species!");
+			printf("Unknown species! Halp!");
 		}
 
 		printf("A %s was born to a", child._isFemale ? "daughter" : "son");
@@ -322,112 +135,19 @@ void breedAnimal(Animal & child, Animal dad, Animal mom)
 				}
 
 				printf(" %s that says %s", child._species.c_str(), child._sound.c_str());
-				if ((child._species == "dog" && child._sound != "woof") || (child._species == "cow" && child._sound != "moo") || (child._species == "dinosaur" && child._sound != "ROAR")
-						|| (child._species == "ocelot" && child._sound != "rawr") || (child._species == "cat" && child._sound != "meow"))
+
+				if ((child._species == "dog" && child._sound != "woof") ||
+						(child._species == "cow" && child._sound != "moo") ||
+						(child._species == "dinosaur" && child._sound != "ROAR") ||
+						(child._species == "ocelot" && child._sound != "rawr") ||
+						(child._species == "cat" && child._sound != "meow"))
 				{
-					printf(", which is pretty funny if you think about it.\n\n");
-				}
-				else
-				{
-					printf(".\n\n");
+					printf(", which is pretty funny if you think about it");
 				}
 
+				printf(".\n\n");
 
-//	setSpeciesAndSound(child, dad, mom);
-//	setGenderAndName(child, dad, mom);
-//	setSize(child, dad, mom);
-//	printAnimal(child, dad, mom);
 }
-
-
-//void setSpeciesAndSound(Animal & child, Animal dad, Animal mom)
-//{
-//	//combine species
-//	if (rand() % 2)
-//	{
-//		child._species = dad._species;
-//	}
-//	else
-//	{
-//		child._species = mom._species;
-//	}
-//
-//	//pick sound
-//	if (child._species == "dog")
-//		{
-//			child._sound = "woof";
-//		}
-//		else
-//		{
-//			child._sound = "glurb";
-//		}
-//}
-//
-//void setGenderAndName(Animal & child, Animal dad, Animal mom)
-//{
-//	//pick gender and assign appropriate words and name
-//	child._isFemale = rand() % 2;
-//	if (child._isFemale)
-//	{
-//		switch (rand() % 5)
-//		{
-//		default:
-//		case 0:
-//			child._name = "Lassie";
-//			break;
-//		case 1:
-//			child._name = "Maisie";
-//			break;
-//		case 2:
-//			child._name = "Goldberry";
-//			break;
-//		case 3:
-//			child._name = "Lucy";
-//			break;
-//		case 4:
-//			child._name = "Bee";
-//			break;
-//		}
-//
-//	}
-//	else
-//	{
-//		switch (rand() % 5)
-//		{
-//		default:
-//		case 0:
-//			child._name = "Rover";
-//			break;
-//		case 1:
-//			child._name = "Oscar";
-//			break;
-//		case 2:
-//			child._name = "Mellow";
-//			break;
-//		case 3:
-//			child._name = "Maverick";
-//			break;
-//		case 4:
-//			child._name = "Buddy";
-//			break;
-//		}
-//	}
-//}
-//
-//void setSize(Animal & child, Animal dad, Animal mom)
-//{
-//	//combine sizes
-//	child._size = (dad._size + mom._size) / 2;
-//}
-//
-//void printAnimal(Animal child, Animal dad, Animal mom)
-//{
-//	//print results of breeding
-//	printf("A %s was born to a %s named %s and a %s named %s! %s name is %s. Now fully grown, our new %s weighs %d pounds. %s says %s.\n",
-//			child._isFemale ? "daughter" : "son", mom._species.c_str(), mom._name.c_str(), dad._species.c_str(), dad._name.c_str(),
-//			child._isFemale ? "Her" : "His", child._name.c_str(),
-//			child._species.c_str(), child._size, child._isFemale ? "She" : "He", child._sound.c_str());
-//}
 
 int main()
 {
@@ -469,15 +189,16 @@ int main()
 
 			}
 
-		printf("Then we breed three, picking random parents from those five plus any we breed along the way. (They grow up so fast!)\n\n");
+		printf("Then we breed three, picking random parents from those five plus any we breed along the way.\n\n"
+				"(They grow up so fast!)\n\n");
 		for (int i = 0; i < 3; i++)
 			{
 			Animal a;
-//			printf("%s, %s, %s, %d, %s\n", a._species.c_str(), a._name.c_str(), a._isFemale ? "female" : "male", a._size, a._sound.c_str());
 			int newDad = males.at(rand() % numMales);
 			int newMom = females.at(rand() % numFemales);
 			breedAnimal(a, litter.at(newDad), litter.at(newMom));
-//			printf("%s, %s, %s, %d, %s\n", a._species.c_str(), a._name.c_str(), a._isFemale ? "female" : "male", a._size, a._sound.c_str());
+
+
 			if (a._isFemale)
 			{
 				numFemales++;
