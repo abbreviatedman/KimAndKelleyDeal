@@ -26,6 +26,9 @@ Animal::~Animal()
 
 void Animal::randAnimal()
 {
+
+	int namePicker = rand() % 5;
+
 	switch (rand() % 5)
 	{
 	case 0:
@@ -33,258 +36,80 @@ void Animal::randAnimal()
 		_sound = "woof";
 
 		_isFemale = rand() % 2;
+
 		if (_isFemale)
 		{
 			_size = rand() % 120;
-			switch (rand() % 5)
-			{
-			default:
-			case 0:
-				_name = "Lassie";
-				break;
-			case 1:
-				_name = "Maisie";
-				break;
-			case 2:
-				_name = "Goldberry";
-				break;
-			case 3:
-				_name = "Lucy";
-				break;
-			case 4:
-				_name = "Bee";
-				break;
-			}
+			_name = dogFemaleName[namePicker];
 		}
 		else
 		{
 			_size = rand() % 160;
-			switch (rand() % 5)
-				{
-				default:
-				case 0:
-					_name = "Rover";
-					break;
-				case 1:
-					_name = "Oscar";
-					break;
-				case 2:
-					_name = "Mellow";
-					break;
-				case 3:
-					_name = "Maverick";
-					break;
-				case 4:
-					_name = "Buddy";
-					break;
-				}
+			_name = dogMaleName[namePicker];
 		}
 		break;
 	case 1:
 		_species = "cat";
 		_sound = "meow";
 		_isFemale = rand() % 2;
+
 		if (_isFemale)
 		{
-
 			_size = rand() % 10 + 10;
-			switch (rand() % 5)
-			{
-			default:
-			case 0:
-				_name = "Tabby";
-				break;
-			case 1:
-				_name = "Lily";
-				break;
-			case 2:
-				_name = "Socks";
-				break;
-			case 3:
-				_name = "Snowball";
-				break;
-			case 4:
-				_name = "Janice";
-				break;
-			}
+			_name = catFemaleName[namePicker];
 		}
 		else
 		{
-
 			_size = rand() % 10 + 15;
-			switch (rand() % 5)
-				{
-				default:
-				case 0:
-					_name = "Mittens";
-					break;
-				case 1:
-					_name = "Vladimir";
-					break;
-				case 2:
-					_name = "Estragon";
-					break;
-				case 3:
-					_name = "Flash";
-					break;
-				case 4:
-					_name = "Tango";
-					break;
-				}
+			_name = catMaleName[namePicker];
 		}
 		break;
 	case 2:
 		_species = "dinosaur";
 		_sound = "ROAR";
 		_isFemale = rand() % 2;
+
 		if (_isFemale)
 		{
 			_size = rand() % 2000 + 12000;
-			switch (rand() % 5)
-			{
-			default:
-			case 0:
-				_name = "Cera";
-				break;
-			case 1:
-				_name = "Chloe";
-				break;
-			case 2:
-				_name = "Petrova";
-				break;
-			case 3:
-				_name = "Pauline";
-				break;
-			case 4:
-				_name = "Posey";
-				break;
-			}
+			_name = dinosaurFemaleName[namePicker];
 		}
 		else
 		{
 			_size = rand() % 2000 + 16000;
-			switch (rand() % 5)
-				{
-				default:
-				case 0:
-					_name = "Littlefoot";
-					break;
-				case 1:
-					_name = "Ducky";
-					break;
-				case 2:
-					_name = "Spike";
-					break;
-				case 3:
-					_name = "Dino";
-					break;
-				case 4:
-					_name = "Barney";
-					break;
-				}
+			_name = dinosaurMaleName[namePicker];
 		}
 		break;
 	case 3:
 		_species = "cow";
 		_sound = "moo";
 		_isFemale = rand() % 2;
+
 		if (_isFemale)
 		{
 			_size = rand() % 400 + 1200;
-			switch (rand() % 5)
-			{
-			default:
-			case 0:
-				_name = "Bessie";
-				break;
-			case 1:
-				_name = "Maisie";
-				break;
-			case 2:
-				_name = "Belle";
-				break;
-			case 3:
-				_name = "Daisy";
-				break;
-			case 4:
-				_name = "Isabella";
-				break;
-			}
+			_name = cowFemaleName[namePicker];
 		}
 		else
 		{
 			_size = rand() % 400 + 2000;
-			switch (rand() % 5)
-				{
-				default:
-				case 0:
-					_name = "Ferdinand";
-					break;
-				case 1:
-					_name = "Duncan";
-					break;
-				case 2:
-					_name = "Doug";
-					break;
-				case 3:
-					_name = "Biff";
-					break;
-				case 4:
-					_name = "Milky White";
-					break;
-				}
+			_name = cowMaleName[namePicker];
 		}
 		break;
 	case 4:
 		_species = "ocelot";
 		_sound = "rawr";
-
 		_isFemale = rand() % 2;
+
 		if (_isFemale)
 		{
 			_size = rand() % 20 + 10;
-			switch (rand() % 5)
-			{
-			default:
-			case 0:
-				_name = "Omayra";
-				break;
-			case 1:
-				_name = "Olive";
-				break;
-			case 2:
-				_name = "Opal";
-				break;
-			case 3:
-				_name = "Olga";
-				break;
-			case 4:
-				_name = "Oneida";
-				break;
-			}
+			_name = ocelotFemaleName[namePicker];
 		}
 		else
 		{
-		_size = rand() % 20 + 20;
-		switch (rand() % 5)
-				{
-				default:
-				case 0:
-					_name = "Omar";
-					break;
-				case 1:
-					_name = "Opie";
-					break;
-				case 2:
-					_name = "Olaf";
-					break;
-				case 3:
-					_name = "Orrin";
-					break;
-				case 4:
-					_name = "Chad";
-					break;
-				}
+			_size = rand() % 20 + 20;
+			_name = ocelotMaleName[namePicker];
 		}
 		break;
 	}
